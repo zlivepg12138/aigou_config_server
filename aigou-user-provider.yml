@@ -1,1 +1,31 @@
+spring:
+      profiles:
+        active:
+        - dev
 
+    ---
+    spring:
+      profiles: dev
+      application:
+        name: AIGOU_PLAT
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://192.168.43.193:1001/eureka
+      instance:
+        prefer-ip-address: true
+    server:
+      port: 5001
+    ---
+    spring:
+      profiles: test
+      application:
+        name: AIGOU_PLAT
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://192.168.43.193:1001/eureka
+      instance:
+        prefer-ip-address: true
+    server:
+      port: 5002
